@@ -1,0 +1,70 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.skill-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+hr {
+    border-top: 3px solid #0d6efd;
+    opacity: 1;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
+.btn-icon {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;        /* use 50% for circular buttons */
+  font-size: 1.25rem;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn-icon:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.btn-icon:focus {
+  outline: none;
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,0.18);
+}
+
+/* Optional: make circular icons */
+.btn-icon.circle { border-radius: 50%; }
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        padding: 40px 0;
+    }
+}
