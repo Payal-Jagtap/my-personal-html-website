@@ -1,70 +1,464 @@
-html {
-    scroll-behavior: smooth;
+/* ============================================
+   Professional Personal Website CSS
+   ============================================ */
+
+/* Google Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero-section {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    min-height: 80vh;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ========== Hero Header ========== */
+.hero-header {
+    background: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
     display: flex;
     align-items: center;
 }
 
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-subtitle {
+    font-weight: 400;
+    opacity: 0.95;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-divider {
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 30px auto;
+    border-radius: 2px;
+    animation: fadeInUp 1.2s ease 0.4s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.min-vh-75 {
+    min-height: 60vh;
+}
+
+/* ========== Section Styling ========== */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+    border-radius: 2px;
+}
+
+/* ========== Profile Card ========== */
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
 .profile-img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 30px rgba(32, 178, 170, 0.3);
+    transition: all 0.3s ease;
 }
 
 .profile-img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(32, 178, 170, 0.4);
 }
 
-.skill-card {
+/* ========== Education Table ========== */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.education-table {
+    margin: 0;
+    border-radius: 15px;
+}
+
+.education-table thead {
+    background: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+    color: white;
+}
+
+.education-table thead th {
     border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.skill-card:hover {
+.education-table tbody td {
+    padding: 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.education-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.education-table tbody tr:hover {
+    background-color: #e0f7f5;
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+/* ========== Projects Section ========== */
+.project-card-custom {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.project-card-custom:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 50px rgba(32, 178, 170, 0.2) !important;
+    border-color: #20b2aa;
 }
 
-hr {
-    border-top: 3px solid #0d6efd;
-    opacity: 1;
+.project-icon {
+    font-size: 4rem;
+    color: #20b2aa;
+    margin-bottom: 20px;
 }
 
-section {
-    scroll-margin-top: 70px;
+.project-card-custom h4 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.btn-icon {
-  width: 56px;
-  height: 56px;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;        /* use 50% for circular buttons */
-  font-size: 1.25rem;
-  transition: transform .12s ease, box-shadow .12s ease;
+.project-card-custom p {
+    line-height: 1.8;
+    color: #6c757d;
 }
 
-.btn-icon:hover { 
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+.project-tags-custom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.btn-icon:focus {
-  outline: none;
-  box-shadow: 0 0 0 .25rem rgba(13,110,253,0.18);
+.project-tags-custom .badge {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
-/* Optional: make circular icons */
-.btn-icon.circle { border-radius: 50%; }
+/* ========== Skills Card ========== */
+.skills-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
 
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
-        padding: 40px 0;
+.skills-card .list-group-item {
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 25px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.skills-card .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.skills-card .list-group-item:hover {
+    background-color: #e0f7f5;
+    border-left-color: #20b2aa;
+    transform: translateX(5px);
+    padding-left: 30px;
+}
+
+.skills-card .list-group-item i {
+    font-size: 1.5rem;
+}
+
+.text-purple {
+    color: #9d4edd !important;
+}
+
+/* ========== Form Messages ========== */
+#formMessage {
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#formMessage.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+#formMessage.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+#submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* ========== Contact Form ========== */
+.contact-form-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contact-form .form-label {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.contact-form .form-control:focus {
+    border-color: #20b2aa;
+    background-color: white;
+    box-shadow: 0 0 0 0.2rem rgba(32, 178, 170, 0.15);
+    outline: none;
+}
+
+.contact-form .form-control-lg {
+    padding: 15px 20px;
+    font-size: 1.05rem;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ========== Buttons ========== */
+.btn-primary {
+    background: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+    border: none;
+    padding: 12px 35px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.5);
+    background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+}
+
+.btn-lg {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* ========== Footer ========== */
+.footer-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 30px 0;
+}
+
+.footer-section .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ========== Shadows ========== */
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ========== Smooth Scrolling ========== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 60px 0;
     }
 }
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-card {
+        padding: 30px 20px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 50px 0;
+    }
+    
+    .contact-form-card {
+        margin: 0 10px;
+    }
+    
+    .education-table thead th,
+    .education-table tbody td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* ========== Custom Scrollbar ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+}
+
